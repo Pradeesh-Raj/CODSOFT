@@ -44,7 +44,6 @@ class Grades{
                 mark = scan.nextInt();
                 scan.nextLine();
             }
-//            mark = Integer.parseInt(comps[1]);
             marks.put(subjectName,mark);
         }
     }
