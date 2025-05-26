@@ -20,28 +20,37 @@ class Grades{
         System.out.print("Enter the number of subjects : ");
         int subjects = scan.nextInt();
         scan.nextLine();
-        if(subjects < 0){
-            System.out.println("Number of subjects cannot be negative.");
+        if(subjects <= 0){
+            System.out.println("Number of subjects must be atleast 1");
             return;
         }
         System.out.println("Enter the Subjects and Marks (Subject Mark) :");
-        for(int i = 1 ; i <= subjects ; i++){
+        Subjects:for(int i = 1 ; i <= subjects ; i++){
             line = scan.nextLine();
             comps = line.split(" ");
-            mark = Integer.parseInt(comps[1]);
             subjectName = comps[0];
+            Set<String> keys = marks.keySet();
+            for(String key : keys){
+                if(key.equalsIgnoreCase(subjectName)){
+                    System.out.println("Subject already exist");
+                    i--;
+                    continue Subjects;
+                }
+            }
+            mark = Integer.parseInt(comps[1]);
             while(mark < 0 || mark > 100){
                 System.out.println("Invalid mark, Please enter value within 0-100.");
                 System.out.print("Enter mark for " + subjectName + " : ");
                 mark = scan.nextInt();
                 scan.nextLine();
             }
-            mark = Integer.parseInt(comps[1]);
+//            mark = Integer.parseInt(comps[1]);
             marks.put(subjectName,mark);
         }
     }
 
     public void calculateAverage(){
+        total = 0;
         Collection<Integer> coll =  marks.values();
         ArrayList<Integer> values = new ArrayList<>(coll);
         for(Integer i : values){
