@@ -44,7 +44,7 @@ public class ATM_Back {
                 queries.executeUpdate();
                 return (amount + " withdrawn successfully");
             }
-        } catch (Exception e) {}
+        } catch (Exception _) {}
         return "";
     }
 
@@ -58,9 +58,23 @@ public class ATM_Back {
                    return (amount + " deposited successfully");
                }
                else{
-                   return "Zero amount cannot be deposited";
+                   return "Zero or Negative amounts cannot be deposited";
                }
-           } catch (Exception e) {}
+           } catch (Exception _) {}
            return "";
+    }
+
+    public double checkBalance(){
+        try{
+            queries = con.prepareStatement("SELECT balance FROM USERS WHERE acc_num = ?");
+            queries.setInt(1,cardNo);
+            result = queries.executeQuery();
+            if(result.next()){
+                return result.getFloat("balance");
+            }
+
+        }
+        catch(Exception _){}
+        return -1d;
     }
 }
