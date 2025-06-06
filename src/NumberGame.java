@@ -26,6 +26,7 @@ class Game {
     }
     
     public void startGame(){
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~ GAME STARTS ~~~~~~~~~~~~~~~~~~~~~");
         int guess;
         Scanner input = new Scanner(System.in);
         Round:for(int round = 1 ; round <= rounds ; round++){
