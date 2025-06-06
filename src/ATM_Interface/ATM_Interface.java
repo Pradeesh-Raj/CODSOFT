@@ -183,23 +183,7 @@ class Interface {
             display.setText("Enter amount to deposit: ");
         }
         else if(home.getSource().equals(balance)){
-            withdraw.setVisible(false);
-            deposit.setVisible(false);
-            balance.setVisible(false);
-
-            num1.setVisible(true);
-            num2.setVisible(true);
-            num3.setVisible(true);
-            num4.setVisible(true);
-            num5.setVisible(true);
-            num6.setVisible(true);
-            num7.setVisible(true);
-            num8.setVisible(true);
-            num9.setVisible(true);
-            num0.setVisible(true);
-            cancel.setVisible(true);
-            clear.setVisible(true);
-            enter.setVisible(true);
+            display.setText("Balance " + back_end.checkBalance());
         }
     }
 
