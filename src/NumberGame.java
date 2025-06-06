@@ -43,7 +43,7 @@ class Game {
                     System.out.println("Score at the end of round " + round + ": " + score);
                     scores.add(score);
                     if(round != rounds) System.out.println("Get ready for next round.");
-                    else break;
+                    else break Round;
                     try{
                         Thread.sleep(2000);
                     }catch(InterruptedException e){}
@@ -64,6 +64,7 @@ class Game {
             System.out.println("Score at the end of round " + round + ": " + score);
             scores.add(score);
             if(round != rounds) System.out.println("Hard Luck! Get ready for next round.");
+            else break Round;
             try{
                 Thread.sleep(2000);
             }catch(InterruptedException e){}
