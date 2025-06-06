@@ -31,7 +31,7 @@ Make sure you have MySQL installed and running. The connection string used:
 ```
 jdbc:mysql://localhost:3306/ATM
 username: root
-password: pradeesh
+password: "your_password"
 ```
 
 ### 📌 Update `ATM_Back.java` if your database credentials differ.
