@@ -96,7 +96,7 @@ public class NumberGame{
     public static void main(String[] args){
         Game numbergame = new Game();
         int choice;
-        Menu:do{
+        Menu: do{
             System.out.println("1.Start");
             System.out.println("2.Score Card");
             System.out.println("3.How to play ?");
